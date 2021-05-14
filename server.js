@@ -45,5 +45,5 @@ app.listen(process.env.PORT || 8085, async () => {
     alpha: 0.25 | .50 | .75 | 1.0,
   });
   console.log(`Imagenet model loaded`);
-  console.log(`Server listening on port ${8085}!`)
+  console.log(`Server listening on port ${process.env.PORT || 8085}!`)
 })
