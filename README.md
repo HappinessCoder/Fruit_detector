@@ -1,2 +1,2 @@
 # Fruit_detector
-Detect fruits from image or video
+Detect fruits from image 
