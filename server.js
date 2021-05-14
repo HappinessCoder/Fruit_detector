@@ -38,7 +38,7 @@ app.get('*', (req, res) => {
   res.send('NOT FOUND')
 })
 
-app.listen(8085, async () => {
+app.listen(process.env.PORT || 8085, async () => {
   console.log(`Loading imagenet model`);
   model = await mobilenet.load({
     version: 2,
