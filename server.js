@@ -39,11 +39,12 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT || 8085, async () => {
-  console.log(`Loading imagenet model`);
-  model = await mobilenet.load({
-    version: 2,
-    alpha: 0.25 | .50 | .75 | 1.0,
-  });
-  console.log(`Imagenet model loaded`);
-  console.log(`Server listening on port ${process.env.PORT || 8085}!`)
+  // const port = server.address().port;
+  // console.log(`Loading imagenet model`);
+  // model = await mobilenet.load({
+  //   version: 2,
+  //   alpha: 0.25 | .50 | .75 | 1.0,
+  // });
+  // console.log(`Imagenet model loaded`);
+  // console.log(`Server listening on port ${port}!`)
 })
