@@ -103,7 +103,7 @@ for(i in labelstoArray)
 const processOutput = function (predictions) 
 {
 	console.log('processOutput');
-	const threshold = 0.85;
+	const threshold = 0.50;
 	// 4 classes, 5 score, 6 boxes
 	//Boxes from prediction array
     const boxes = predictions[6].arraySync();
