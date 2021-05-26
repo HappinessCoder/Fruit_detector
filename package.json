@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
-
   },
   "keywords": [
     "tensorflow",
@@ -16,14 +15,12 @@
     "nodejs",
     "expressjs",
     "neural",
-    
     "net",
     "traning"
   ],
   "author": "Siva",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow-models/mobilenet": "^2.1.0",
     "@tensorflow/tfjs-node": "^3.6.1",
     "base64-to-uint8array": "^1.0.0",
     "body-parser": "^1.19.0",
