@@ -50,10 +50,13 @@ app.post('/predict', async (req, res) => {
   const tf4d = tf.cast(tf4d_, 'int32'); 
   const prediction = await model.executeAsync(tf4d); 
   //get result from prediction
-  const msg=getCount(prediction);
+  const data=getCount(prediction);
 
-res.send(msg);
-console.log(msg);
+ if (data) {
+      res.send(data);
+    } else {
+      res.send("No fruit detected");
+    }
   }
   catch(err){
     console.error(err);
@@ -100,7 +103,7 @@ for(i in labelstoArray)
 const processOutput = function (predictions) 
 {
 	console.log('processOutput');
-	const threshold = 0.50;
+	const threshold = 0.85;
 	// 4 classes, 5 score, 6 boxes
 	//Boxes from prediction array
     const boxes = predictions[4].arraySync();
@@ -169,12 +172,12 @@ const getCount = function (predictions)
              produce[j].count = _x;     
          }
          else{
-          return msg="Different items found! Please place similar items."   
+        return  msg="Different items found! Please place similar items."   
         }
       }
       }
     }
-   return msg=produce[0].name +":"+produce[0].count;
+    return result=produce[0].name +":"+produce[0].count;
      
   }
   catch(err){
