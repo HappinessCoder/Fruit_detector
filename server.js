@@ -49,12 +49,9 @@ app.post('/predict', async (req, res) => {
   var tf4d_ = tf.tensor4d(Array.from(resized.dataSync()), [1,ofstHeight, ofstWidth, 3]);
   const tf4d = tf.cast(tf4d_, 'int32'); 
   const prediction = await model.executeAsync(tf4d); 
-  // const tensor3d = tf.node.decodeJpeg( imageArray, 3 );
-  // const prediction = await model.executeAsync(tensor3d); 
-  //const prediction = await model.predict(tensor3d); 
- // const prediction = await model.detect(tensor3d); 
- //tf4d.dispose();
-const msg=getCount(prediction);
+  //get result from prediction
+  const msg=getCount(prediction);
+
 res.send(msg);
 console.log(msg);
   }
@@ -106,12 +103,13 @@ const processOutput = function (predictions)
 	const threshold = 0.50;
 	// 4 classes, 5 score, 6 boxes
 	//Boxes from prediction array
-    const boxes = predictions[6].arraySync();
+    const boxes = predictions[4].arraySync();
+  
     //Scores from prediction array
-    const scores = predictions[5].arraySync();
+    const scores = predictions[2].arraySync();
     //Classes from prediction array
-    const classes = predictions[4].dataSync();
-	
+    const classes = predictions[1].dataSync();
+	 // console.log(predictions[1].arraySync());
 	
 	 //Set Predicted Item = 0
     var totalpredicted = 0;

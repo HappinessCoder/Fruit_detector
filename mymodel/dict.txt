@@ -1,8 +1,7 @@
 ???
-Lemon
-Blackcurrant
-MixedBerries
-HoneyAndLemon
-Mint
-Original
-Spearmint
+apple
+dragon fruit
+mango
+orange
+pear
+tomato
