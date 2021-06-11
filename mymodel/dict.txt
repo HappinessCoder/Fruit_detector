@@ -5,3 +5,10 @@ mango
 orange
 pear
 tomato
+kiwi
+lemon
+banana
+golden_pear
+white_seedless_grape
+red_seedless_grape
+
