@@ -43,9 +43,12 @@ $(document).ready(function () {
             async: true,
             success: function (data) {
                 // Get and display the result
+                //var jdata=data;
+                var sdata =   JSON.stringify(data).replace(/[\[\]"{}]+/g,"");
+
                 $('.loader').hide();
                 $('#result').fadeIn(600);
-                $('#result').text(' Result:  ' + data);
+                $('#result').text(' Result:  ' + sdata);
                 console.log('Success!');
             },
         });

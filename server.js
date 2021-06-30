@@ -177,8 +177,9 @@ const getCount = function (predictions)
       }
       }
     }
-    return result=produce[0].name +":"+produce[0].count;
-     
+    //return result=produce[0].name +":"+produce[0].count;
+
+     return result=produce;
   }
   catch(err){
     console.error(err);
