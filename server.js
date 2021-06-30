@@ -52,7 +52,7 @@ app.post('/predict', async (req, res) => {
   //get result from prediction
   const data=getCount(prediction);
 
- if (data.length>0 ) {
+ if (data) {
       res.send(data);
     } else {
       res.send("No fruit detected");

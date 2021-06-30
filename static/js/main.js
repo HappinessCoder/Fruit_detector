@@ -44,15 +44,12 @@ $(document).ready(function () {
             success: async function (data) {
                 // Get and display the result
          
-                    try {
-                        var sdata =  JSON.stringify(data).replace(/[\[\]"{}]+/g,"");
+                 
+                       // var sdata =  JSON.stringify(data).replace(/[\[\]"{}]+/g,"");
                         $('.loader').hide();
                         $('#result').fadeIn(600);
-                        $('#result').text(' Result:  ' + sdata);
+                        $('#result').text(' Result:  ' + data);
                         console.log('Success!');
-                    } catch (error) {
-                        console.log(error);
-                    }
                
            
             },
