@@ -41,15 +41,20 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             async: true,
-            success: function (data) {
+            success: async function (data) {
                 // Get and display the result
-                //var jdata=data;
-                var sdata =   JSON.stringify(data).replace(/[\[\]"{}]+/g,"");
-
-                $('.loader').hide();
-                $('#result').fadeIn(600);
-                $('#result').text(' Result:  ' + sdata);
-                console.log('Success!');
+         
+                    try {
+                        var sdata =  JSON.stringify(data).replace(/[\[\]"{}]+/g,"");
+                        $('.loader').hide();
+                        $('#result').fadeIn(600);
+                        $('#result').text(' Result:  ' + sdata);
+                        console.log('Success!');
+                    } catch (error) {
+                        console.log(error);
+                    }
+               
+           
             },
         });
     });
